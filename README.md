@@ -5,7 +5,9 @@
 
 ## 本脚本使用教程
 #### 一.启动方式
-1. 首先要下载编译后的文件(地址: https://github.com/fantasyfanwuren/ops_plagiary/releases/tag/V1.0.0):ops_plagiary.exe,因为opensea上大多数NFT的访问都需要代理,而他们的图片和元数据也大多数需要代理,所以建议国内用户提前开代理.
+1. 首先要下载编译后的文件(地址: 
+https://github.com/fantasyfanwuren/ops_plagiary/releases/tag/V1.0.0
+):ops_plagiary.exe,因为opensea上大多数NFT的访问都需要代理,而他们的图片和元数据也大多数需要代理,所以建议国内用户提前开代理.
 2. 双击ops_plagiary.exe可以启动这个脚本,但是推荐您使用下面的方式.
 3. 打开CMD,通过cd指令到ops_plagiary.exe所在目录下,然后
 ```
