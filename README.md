@@ -35,8 +35,10 @@
 > 记得后面一定有一个"/".
 * 在无规律的AR类型地址中,脚本会让我们输入合约地址,合约地址更简单,以我们第一个例子为例,我们看到它的合约浏览器地址为: https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e ,那么它的合约地址就是 0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
 3. 关于最大NFT的结尾编号
-* 这是一个NFT项目中最大的NFT编号,我们还是以第一个例子为例: https://opensea.io/zh-CN/collection/doodles-official ,打开后,我们会发现在左侧的搜索栏中,会显示可搜索的总量是"10,000项结果"(英文版本是:"10,000 results"),因此我们可以确信它有10000个NFT,但我们最好还是验证以下为好.
-* 我们按照2中所述的步骤,来到这个项目的合约浏览器中:https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e,然后按照2中所述的步骤,在token_url中输入10000,它返回了"Error: Returned error: execution reverted: ERC721Metadata: URI query for nonexistent token",这意味着它的最大NFT编号并不是10000;我们试试9999,它返回了:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/9999,因此我们得出结论,它的最大编号是9999
+* 这是一个NFT项目中最大的NFT编号,我们还是以第一个例子为例: https://opensea.io/zh-CN/collection/doodles-official
+,打开后,我们会发现在左侧的搜索栏中,会显示可搜索的总量是"10,000项结果"(英文版本是:"10,000 results"),因此我们可以确信它有10000个NFT,但我们最好还是验证以下为好.
+* 我们按照2中所述的步骤,来到这个项目的合约浏览器中:https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
+,然后按照2中所述的步骤,在token_url中输入10000,它返回了"Error: Returned error: execution reverted: ERC721Metadata: URI query for nonexistent token",这意味着它的最大NFT编号并不是10000;我们试试9999,它返回了:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/9999,因此我们得出结论,它的最大编号是9999
 
 #### 三.目前存在的问题
 * 本脚本默认从NFT编号1开始下载,因此对于部分存在0编号的NFT,0编号的元数据和img文件(支持png/jpg/img/webp)会被漏掉.
