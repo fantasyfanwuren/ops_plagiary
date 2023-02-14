@@ -1,0 +1,2 @@
+> 有什么问题请联系QQ:756423901
+> 如果这个脚本对您产生了帮助,如果您愿意的话,可以对我进行捐赠:xch1qysvhalp7f6xlecxcp0xmx4dsjx3zw8y669ef7lr6yy4z6948qrsazwa4a
