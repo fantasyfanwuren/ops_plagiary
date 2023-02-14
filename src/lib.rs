@@ -62,7 +62,7 @@ pub enum UrlType {
     Ar,
 }
 pub fn get_url_type() -> UrlType {
-    println!("\n请输入您的NFT元数据存储链接的形式(若不明白,请查看视频教程):");
+    println!("\n请输入您的NFT元数据存储链接的形式(若不明白,请查看README):");
     println!(
         "1.所有元数据的地址,地址与NFT编号之间存在具有明显的规律性.
     例如:https://be.undeadblocks.com/api/metadata/123
@@ -127,26 +127,6 @@ fn get_https_urls() -> Vec<String> {
         .expect("读取结尾编号失败");
     let end: usize = end.trim().parse().expect("解析结尾编号失败");
 
-    println!(
-    "\n元数据链接是否以.json结尾（例如：ipfs://QmdysQPdu96yqhir9iHGmVw9mEqYREScHnCNmXTjc8hjoN/1.json）
-    （多数情况下不是）:
-        1.不是
-        2.是"
-    );
-
-    let mut json_tail = String::new();
-    std::io::stdin()
-        .read_line(&mut json_tail)
-        .expect("无法读取您输入的内容");
-    match json_tail.trim() {
-        "1" => {
-            json_tail = "".to_owned();
-        }
-        "2" => {
-            json_tail = ".json".to_owned();
-        }
-        _ => panic!("请输入数字1或者2"),
-    }
     // 将bese_url转化为https类型的地址
     let base_url = match convert_to_https(base_url) {
         Some(s) => s,
@@ -155,7 +135,7 @@ fn get_https_urls() -> Vec<String> {
 
     let mut result = vec![];
     for i in 1..=end {
-        let url = format!("{}{}{}", base_url, i, json_tail);
+        let url = format!("{}{}", base_url, i);
         result.push(url);
     }
     result
@@ -278,15 +258,6 @@ fn get_ar_urls() -> Vec<String> {
         .expect("无法读取到您输入的合约地址");
     let contract = contract.trim().to_string();
 
-    println!("请输入NFT的起始编号:(0或1)");
-    let mut start = String::new();
-    std::io::stdin()
-        .read_line(&mut start)
-        .expect("无法读取您输入的起始编号");
-    let start: usize = start
-        .trim()
-        .parse()
-        .expect("解析起始编号失败,请确保您输入的是一个数字");
     println!("请输入NFT的结尾编号:");
     let mut end = String::new();
     std::io::stdin()
@@ -304,7 +275,7 @@ fn get_ar_urls() -> Vec<String> {
     let client = reqwest::blocking::Client::new();
     let mut eth_cilent = EthCilent::new(client, contract, nodes);
     let mut result = vec![];
-    for id in start..=end {
+    for id in 1..=end {
         println!("正在为您从以太坊节点上查询该NFT的元数据链接...");
         let mata_url = eth_cilent.get_mata_url(id).expect(
             "无法获取到mata链接,这可能由于三方面原因:\n
