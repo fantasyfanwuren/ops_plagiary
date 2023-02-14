@@ -30,12 +30,12 @@
 > 接下来软件询问我们输入根地址或者合约地址(仅针对AR类型的无规律)
 
 3. 什么是根地址和合约地址
-* 在上面的第一个例子中,我们在输入1的时候,它的返回的链接是:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/1,那么它的根地址就是ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/
-* 再举个例子,在其他的NFT中很多不是以ipfs开头,而是以https开头的,设置也十分雷同;假设有另外一个项目,当我们在token_id中输入1时,它返回的是:https://api.hello/meta/1,那么它的根地址就是https://api.hello/meta/.
+* 在上面的第一个例子中,我们在输入1的时候,它的返回的链接是:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/1,那么它的根地址就是: ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/
+* 再举个例子,在其他的NFT中很多不是以ipfs开头,而是以https开头的,设置也十分雷同;假设有另外一个项目,当我们在token_id中输入1时,它返回的是: https://api.hello/meta/1 ,那么它的根地址就是: https://api.hello/meta/
 > 记得后面一定有一个"/".
-* 在无规律的AR类型地址中,脚本会让我们输入合约地址,合约地址更简单,以我们第一个例子为例,我们看到它的合约浏览器地址为:https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e,那么它的合约地址就是0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
+* 在无规律的AR类型地址中,脚本会让我们输入合约地址,合约地址更简单,以我们第一个例子为例,我们看到它的合约浏览器地址为: https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e ,那么它的合约地址就是 0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
 3. 关于最大NFT的结尾编号
-* 这是一个NFT项目中最大的NFT编号,我们还是以第一个例子为例:https://opensea.io/zh-CN/collection/doodles-official,打开后,我们会发现在左侧的搜索栏中,会显示可搜索的总量是"10,000项结果"(英文版本是:"10,000 results"),因此我们可以确信它有10000个NFT,但我们最好还是验证以下为好.
+* 这是一个NFT项目中最大的NFT编号,我们还是以第一个例子为例: https://opensea.io/zh-CN/collection/doodles-official ,打开后,我们会发现在左侧的搜索栏中,会显示可搜索的总量是"10,000项结果"(英文版本是:"10,000 results"),因此我们可以确信它有10000个NFT,但我们最好还是验证以下为好.
 * 我们按照2中所述的步骤,来到这个项目的合约浏览器中:https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e,然后按照2中所述的步骤,在token_url中输入10000,它返回了"Error: Returned error: execution reverted: ERC721Metadata: URI query for nonexistent token",这意味着它的最大NFT编号并不是10000;我们试试9999,它返回了:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/9999,因此我们得出结论,它的最大编号是9999
 
 #### 三.目前存在的问题
