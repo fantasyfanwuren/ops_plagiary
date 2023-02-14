@@ -17,13 +17,13 @@
 1. 关于NFT元数据存储链接的形式
 在脚本最开始,会询问用户采用计划爬取的NFT元数据存储链接的形式,本脚本一共支持两种形式,第一种是有规律的类型,第二种是无规律的类型.(第三种是base64类型,目前本脚本不支持).这是针对于他们的元数据链接而言的,那么我们如何知道一个NFT的元数据链接是否有规律呢?
 2. 如何确定一个NFT的元数据链接是否有规律
-* 我们打开一个NFT的项目首页:https://opensea.io/zh-CN/collection/doodles-official
-* 我们随便打开一个它里面的项目:https://opensea.io/zh-CN/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/2358
-* 在图片下方的"详情"中,点开它的"合约地址",它会进行一个跳转到合约浏览器中:https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
+* 我们打开一个NFT的项目首页: https://opensea.io/zh-CN/collection/doodles-official
+* 我们随便打开一个它里面的项目: https://opensea.io/zh-CN/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/2358
+* 在图片下方的"详情"中,点开它的"合约地址",它会进行一个跳转到合约浏览器中: https://etherscan.io/address/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e
 * 新弹出的网页中我们依次点击网页中部的:"Contract"->"ReadContract"(或者"Read As Proxy)
 * 然后我们在下方找到"token_url"或者"url"类的字样,点开.(这里是我们查询当前这张NFT的元数据链接的一个入口,用来帮助我们判断它是哪种类型的链接.)
-* 在输入框内输入:"1",点击Query,下方将出现字样:ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/1
-* 当我们输入2的时候,它会变成ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/2
+* 在输入框内输入:"1",点击Query,下方将出现字样: ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/1
+* 当我们输入2的时候,它会变成: ipfs://QmPMc4tcBsMqLRuCQtPmPe84bpSjrC3Ky7t3JWuHXYB4aS/2
 > 由此可以看出它是有规律的
 在opensea上大多数元数据链接都是有规律的,并且token_id与元数据链接尾部的数字一一对应
 * 还有另外一种类型是无规律的,这个目前只支持AR类型的存储,可以参照上面的方式查看这个NFT项目来做理解:https://opensea.io/zh-CN/assets/ethereum/0x52de2cbad65d709631e5245dbc92a04c0c0de49f/1
